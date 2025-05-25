@@ -13,7 +13,7 @@
                     <nav>
                         <ol class="flex items-center gap-2">
                             <li>
-                                <a class="font-medium" href="index.html">Dashboard /</a>
+                                <a class="font-medium" href="{{route('home')}}">Dashboard /</a>
                             </li>
                             <li class="text-primary">Calendar</li>
                         </ol>

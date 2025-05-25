@@ -61,11 +61,13 @@
 
                     <!-- Menu Item Profile -->
                     <li>
-                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-                            href="{{ asset('tailadmin/build/profile.html') }}"
-                            @click="selected = (selected === 'Profile' ? '':'Profile')"
-                            :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Profile') && (page === 'profile') }"
-                            :class="page === 'profile' && 'bg-graydark'">
+                        <a href="{{ route('profile') }}"
+                        x-init="selected = '{{ request()->routeIs('profile') ? 'profile' : '' }}'"
+                        :class="[
+                            'group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium duration-300 ease-in-out',
+                            selected === 'profile' ? 'bg-graydark dark:bg-meta-4 text-primary font-bold' :
+                            'text-bodydark1 hover:bg-graydark dark:hover:bg-meta-4'
+                        ]">
                             <i class="bi bi-person"></i>
 
                             Profile
@@ -100,12 +102,12 @@
                             <ul class="mb-5.5 mt-4 flex flex-col gap-2.5 pl-6">
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
-                                        href="{{ asset('tailadmin/build/form-elements.html') }}"
+                                        href="{{route('form-elements')}}"
                                         :class="page === 'formElements' && '!text-white'">Form Elements</a>
                                 </li>
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
-                                        href="{{ asset('tailadmin/build/form-layout.html') }}"
+                                         href="{{route('form-layout')}}"
                                         :class="page === 'formLayout' && '!text-white'">Form Layout</a>
                                 </li>
                             </ul>
@@ -116,13 +118,13 @@
 
                     <!-- Menu Item Tables -->
                     <li>
-                        <a class="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-                            href="{{ asset('tailadmin/build/tables.html') }}"
-                            @click="selected = (selected === 'Tables' ? '':'Tables')"
-                            :class="{
-                                'bg-graydark dark:bg-meta-4': (selected === 'Tables') && (
-                                    page === 'tables')
-                            }">
+                        <a href="{{ route('tables') }}"
+                        x-init="selected = '{{ request()->routeIs('tables') ? 'tables' : '' }}'"
+                        :class="[
+                            'group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium duration-300 ease-in-out',
+                            selected === 'tables' ? 'bg-graydark dark:bg-meta-4 text-primary font-bold' :
+                            'text-bodydark1 hover:bg-graydark dark:hover:bg-meta-4'
+                        ]">
                            <i class="bi bi-table"></i>
 
                             Tables
@@ -132,14 +134,13 @@
 
                     <!-- Menu Item Settings -->
                     <li>
-                        <a class="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-                            href="{{ asset('tailadmin/build/settings.html') }}"
-                            @click="selected = (selected === 'Settings' ? '':'Settings')"
-                            :class="{
-                                'bg-graydark dark:bg-meta-4': (selected === 'Settings') && (
-                                    page === 'settings')
-                            }"
-                            :class="page === 'settings' && 'bg-graydark'">
+                        <a href="{{ route('settings') }}"
+                        x-init="selected = '{{ request()->routeIs('settings') ? 'settings' : '' }}'"
+                        :class="[
+                            'group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium duration-300 ease-in-out',
+                            selected === 'settings' ? 'bg-graydark dark:bg-meta-4 text-primary font-bold' :
+                            'text-bodydark1 hover:bg-graydark dark:hover:bg-meta-4'
+                        ]">
                             <i class="bi bi-gear"></i>
 
                             Settings
@@ -156,13 +157,13 @@
                 <ul class="mb-6 flex flex-col gap-1.5">
                     <!-- Menu Item Chart -->
                     <li>
-                        <a class="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-                            href="{{ asset('tailadmin/build/chart.html') }}"
-                            @click="selected = (selected === 'Chart' ? '':'Chart')"
-                            :class="{
-                                'bg-graydark dark:bg-meta-4': (selected === 'Chart') && (
-                                    page === 'Chart')
-                            }">
+                        <a href="{{ route('chart') }}"
+                        x-init="selected = '{{ request()->routeIs('chart') ? 'chart' : '' }}'"
+                        :class="[
+                            'group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium duration-300 ease-in-out',
+                            selected === 'chart' ? 'bg-graydark dark:bg-meta-4 text-primary font-bold' :
+                            'text-bodydark1 hover:bg-graydark dark:hover:bg-meta-4'
+                        ]">
                              <i class="bi bi-pie-chart"></i>
 
                             Chart
@@ -197,13 +198,13 @@
                             <ul class="mb-3 mt-4 flex flex-col gap-2 pl-6">
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
-                                        href="{{ asset('tailadmin/build/alerts.html') }}"
+                                        href="{{route('alerts')}}"
                                         :class="page === 'alerts' && '!text-white'">Alerts</a>
                                 </li>
 
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
-                                        href="{{ asset('tailadmin/build/buttons.html') }}"
+                                       href="{{route('buttons')}}"
                                         :class="page === 'buttons' && '!text-white'">Buttons</a>
                                 </li>
                             </ul>
@@ -211,49 +212,6 @@
                         <!-- Dropdown Menu End -->
                     </li>
                     <!-- Menu Item Ui Elements -->
-
-                    <!-- Menu Item Auth Pages -->
-                    <li>
-                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-                            href="#" @click.prevent="selected = (selected === 'AuthPages' ? '':'AuthPages')"
-                            :class="{
-                                'bg-graydark dark:bg-meta-4': (selected === 'AuthPages') || (
-                                    page === 'register' || page === 'login')
-                            }">
-                           <i class="bi bi-box-arrow-in-right"></i>
-
-                            Authentication
-
-                            <svg class="absolute right-4 top-1/2 -translate-y-1/2 fill-current"
-                                :class="{ 'rotate-180': (selected === 'AuthPages') }" width="20" height="20"
-                                viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M4.41107 6.9107C4.73651 6.58527 5.26414 6.58527 5.58958 6.9107L10.0003 11.3214L14.4111 6.91071C14.7365 6.58527 15.2641 6.58527 15.5896 6.91071C15.915 7.23614 15.915 7.76378 15.5896 8.08922L10.5896 13.0892C10.2641 13.4147 9.73651 13.4147 9.41107 13.0892L4.41107 8.08922C4.08563 7.76378 4.08563 7.23614 4.41107 6.9107Z"
-                                    fill="" />
-                            </svg>
-                        </a>
-
-                        <!-- Dropdown Menu Start -->
-                        <div class="translate transform overflow-hidden"
-                            :class="(selected === 'AuthPages') ? 'block' : 'hidden'">
-                            <ul class="mb-3 mt-4 flex flex-col gap-2 pl-6">
-                                <li>
-                                    <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
-                                        href="{{ asset('tailadmin/build/signin.html') }}"
-                                        :class="page === 'signin' && '!text-white'">Sign
-                                        In</a>
-                                </li>
-                                <li>
-                                    <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
-                                        href="{{ asset('tailadmin/build/signup.html') }}"
-                                        :class="page === 'signup' && '!text-white'">Sign
-                                        Up</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- Dropdown Menu End -->
-                    </li>
-                    <!-- Menu Item Auth Pages -->
                 </ul>
             </div>
         </nav>
