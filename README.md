@@ -9,11 +9,11 @@
 2. Terminal (Powershell, etc)
 
     ```shell
-    git clone https://github.com/raflizocky/laravel11-tailadmin.git
+    git clone https://github.com/firchun/TailAdmin-Laravel.git
     ```
 
     ```shell
-    code laravel11-tailadmin
+    code TailAdmin-Laravel
     ```
 
 3. `.env`
@@ -41,10 +41,10 @@
 
 If you encounter any issues or would like to contribute to the project, feel free to:
 
--   Report any [issues](https://github.com/raflizocky/laravel11-tailadmin/issues)
--   Submit a [pull request](https://github.com/raflizocky/laravel11-tailadmin/pulls)
--   Participate in [discussions](https://github.com/raflizocky/laravel11-tailadmin/discussions) for any questions, feedback, or suggestions
+-   Report any [issues](https://github.com/firchun/TailAdmin-Laravel/issues)
+-   Submit a [pull request](https://github.com/firchun/TailAdmin-Laravel/pulls)
+-   Participate in [discussions](https://github.com/firchun/TailAdmin-Laravel/discussions) for any questions, feedback, or suggestions
 
 ## License
 
-Code released under the [MIT License](https://github.com/raflizocky/laravel11-tailadmin/blob/main/LICENSE).
+Code released under the [MIT License](https://github.com/firchun/TailAdmin-Laravel/blob/main/LICENSE).
